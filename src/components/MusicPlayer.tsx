@@ -5,15 +5,27 @@ export default function MusicPlayer() {
   const audio = useRef<HTMLAudioElement>(null);
   const fade = useRef(0);
   const optedOut = useRef(false);
+  const starting = useRef(false);
   const [playing, setPlaying] = useState(false);
   const [unavailable, setUnavailable] = useState(false);
   const start = useCallback(async () => {
-    if (!audio.current || optedOut.current) return;
+    if (!audio.current || optedOut.current || starting.current) return;
+    const el = audio.current;
+    starting.current = true;
     try {
-      const el = audio.current;
-      if (!el.paused) return;
+      if (!el.paused && !el.muted) {
+        setPlaying(true);
+        return;
+      }
+      cancelAnimationFrame(fade.current);
       el.volume = 0;
+      el.muted = false;
       await el.play();
+      // A mute request may arrive while the browser is resolving play().
+      if (optedOut.current) {
+        el.muted = true;
+        return;
+      }
       setPlaying(true);
       cancelAnimationFrame(fade.current);
       const begin = performance.now();
@@ -24,18 +36,28 @@ export default function MusicPlayer() {
       fade.current = requestAnimationFrame(tick);
     } catch {
       setPlaying(false);
+    } finally {
+      starting.current = false;
     }
   }, []);
   useEffect(() => {
     void start();
-    const interact = () => {
+    const interact = (event: Event) => {
+      // The dedicated toggle owns its gesture; do not start then immediately mute.
+      if (
+        event.target instanceof Element &&
+        event.target.closest(".music-button")
+      )
+        return;
       void start();
     };
     window.addEventListener("pointerdown", interact);
     window.addEventListener("keydown", interact);
+    window.addEventListener("click", interact);
     return () => {
       window.removeEventListener("pointerdown", interact);
       window.removeEventListener("keydown", interact);
+      window.removeEventListener("click", interact);
       cancelAnimationFrame(fade.current);
     };
   }, [start]);
@@ -44,7 +66,8 @@ export default function MusicPlayer() {
     if (playing) {
       optedOut.current = true;
       cancelAnimationFrame(fade.current);
-      audio.current.pause();
+      // Keep the song's timeline running, including while muted.
+      audio.current.muted = true;
       setPlaying(false);
     } else {
       optedOut.current = false;

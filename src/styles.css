@@ -5,7 +5,7 @@
   background: #031a16;
   font-synthesis: none;
   font-weight: 500;
-  --mint: #75ffaa;
+  --mint: #6eff9f;
   --gold: #d9b978;
   --muted: #8ea99d;
   --wine: #321723;
@@ -49,8 +49,8 @@ a {
   overflow: hidden;
   background: radial-gradient(
     ellipse at 50% 46%,
-    #0b3328 0%,
-    #06251f 32%,
+    #08291f 0%,
+    #05231d 32%,
     #031a16 67%,
     #02120f 100%
   );
@@ -137,11 +137,11 @@ main {
 }
 .scene-heading h1 {
   font-size: clamp(25px, 3vw, 35px);
-  font-weight: 900;
-  letter-spacing: -1.15px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
   line-height: 1.3;
   color: var(--mint);
-  text-shadow: 0 0 25px #68ff9722;
+  text-shadow: 0 0 18px #68ff9726;
   outline: none;
 }
 .scene-heading p {
@@ -1711,5 +1711,236 @@ main {
   }
   .experience-footer {
     bottom: 16px;
+  }
+}
+
+/* Desktop fidelity: small, centered scenes with ample cinematic negative space. */
+@media (min-width: 1024px) {
+  .scene {
+    padding: 76px 28px;
+  }
+  .gift-scene,
+  .intro-scene,
+  .birthday-scene,
+  .memories-scene,
+  .wishes-scene,
+  .puzzle-scene,
+  .scratch-scene,
+  .letter-scene {
+    width: min(32vw, 460px);
+    max-width: 460px;
+  }
+  .scene-heading h1,
+  .intro-scene .scene-heading h1,
+  .birthday-scene .scene-heading h1,
+  .letter-scene .scene-heading h1 {
+    font-size: 28px;
+    line-height: 1.4;
+    text-wrap: balance;
+  }
+  .scene-heading p {
+    font-size: 12px;
+    margin-top: 11px;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    margin-bottom: 21px;
+    opacity: 0.8;
+  }
+  .gift-scene {
+    padding-top: 0;
+  }
+  .gift-button {
+    width: 230px;
+    height: 218px;
+    margin: 27px auto 14px;
+  }
+  .gift-art {
+    width: 194px;
+    height: 194px;
+  }
+  .gift-halo {
+    width: 218px;
+    height: 218px;
+    left: 6px;
+    top: 0;
+    opacity: 0.8;
+  }
+  .gift-orbit {
+    width: 225px;
+    height: 225px;
+    left: 2px;
+    top: -4px;
+    opacity: 0.55;
+  }
+  .orbit-two {
+    width: 251px;
+    height: 251px;
+    left: -11px;
+    top: -17px;
+    opacity: 0.25;
+  }
+  .gift-glint {
+    font-size: 15px;
+  }
+  .glint-two {
+    font-size: 21px;
+  }
+  .glint-three {
+    font-size: 10px;
+  }
+  .gift-instruction {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .tiny-note {
+    font-size: 9px;
+  }
+  .avatar-ring {
+    width: 84px;
+    height: 84px;
+    margin-bottom: 27px;
+  }
+  .intro-scene {
+    width: 430px;
+  }
+  .intro-scene .scene-heading h1 {
+    font-size: 27px;
+    line-height: 1.55;
+  }
+  .birthday-scene {
+    width: 460px;
+  }
+  .birthday-scene .scene-heading h1 {
+    font-size: 27px;
+  }
+  .stats {
+    margin: 24px auto 18px;
+  }
+  .stat {
+    padding: 0 13px;
+  }
+  .stat strong {
+    font-size: 18px;
+  }
+  .stat span {
+    font-size: 7px;
+    letter-spacing: 1.6px;
+  }
+  .cake-wrap {
+    zoom: 0.88;
+    margin-top: 8px;
+  }
+  .cake-dedication {
+    font-size: 20px;
+  }
+  .birthday-prompt {
+    font-size: 11px;
+  }
+  .polaroid {
+    width: 218px;
+    padding: 11px 11px 15px;
+  }
+  .polaroid .photo {
+    height: 198px;
+  }
+  .polaroid p {
+    font-size: 19px;
+  }
+  .polaroid-area {
+    margin-top: 31px;
+    margin-bottom: 20px;
+  }
+  .floating-heart {
+    font-size: 21px;
+  }
+  .balloons {
+    gap: 20px;
+    zoom: 0.9;
+  }
+  .wish-card {
+    width: 330px;
+    font-size: 12px;
+    min-height: 60px;
+    border-color: #cf8ba32a;
+    background: #301925e6;
+  }
+  .puzzle-board {
+    width: 280px;
+    height: 280px;
+    border-width: 4px;
+  }
+  .puzzle-meta {
+    width: 280px;
+    margin-top: 19px;
+  }
+  .scratch-card {
+    width: 310px;
+    margin-top: 30px;
+  }
+  .letter-scene {
+    width: 400px;
+  }
+  .letter-card {
+    height: min(420px, 47vh);
+    padding: 25px 30px;
+    margin-top: 20px;
+    background-color: #2c1620;
+  }
+  .letter-card p {
+    font-size: 22px;
+  }
+  .pill {
+    min-height: 34px;
+    padding: 8px 17px;
+    font-size: 11px;
+    border-color: #d7b77740;
+  }
+  .pill:hover {
+    box-shadow: 0 0 18px #e4c68a0d;
+  }
+  .phone-panel {
+    width: 248px;
+    border-color: #99747e2a;
+    background: linear-gradient(155deg, #301b27, #20141c 65%, #281821);
+  }
+  .phone-panel .keypad {
+    column-gap: 13px;
+  }
+  .scene-action {
+    margin-top: 24px;
+  }
+  .music-button {
+    width: 39px;
+    height: 39px;
+    border-color: #ae788334;
+  }
+}
+@media (min-width: 1024px) {
+  .phone-panel {
+    padding-top: 25px;
+    padding-bottom: 16px;
+  }
+  .lock-clock {
+    font-size: 38px;
+  }
+  .phone-panel .lock-caption {
+    margin-bottom: 12px;
+  }
+  .phone-panel .passcode-dots {
+    margin: 14px 0 16px;
+  }
+  .phone-panel .keypad {
+    row-gap: 8px;
+  }
+  .phone-panel .keypad button {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+  .phone-panel .code-hint {
+    margin-top: 12px;
+    margin-bottom: 8px;
   }
 }

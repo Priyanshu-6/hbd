@@ -25,8 +25,8 @@ export default function WishesScene({ onNext }: SceneProps) {
                   animate={{
                     opacity: 1,
                     scale: 1,
-                    y: [0, -12, 0],
-                    rotate: [-3, 3, -3],
+                    y: [0, -8, 0],
+                    rotate: [-1.5, 1.5, -1.5],
                   }}
                   exit={{
                     scale: 1.3,
@@ -35,7 +35,7 @@ export default function WishesScene({ onNext }: SceneProps) {
                   }}
                   transition={{
                     y: {
-                      duration: 3 + i * 0.3,
+                      duration: 4.5 + i * 0.3,
                       repeat: Infinity,
                       delay: i * 0.3,
                     },
