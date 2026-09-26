@@ -2,36 +2,36 @@ export const SHOW_PREVIEW_UI = true;
 
 // All personal content lives here. Replace files in public/ to make it yours.
 export const birthdayConfig = {
-  recipientName: "Cutiepiee",
-  birthdayCode: "2004",
-  birthDate: "2004-09-26T00:00:00+05:30",
+  recipientName: "Anushka",
+  birthdayCode: "2005",
+  birthDate: "2005-09-27T00:00:00+05:30",
   song: "/audio/birthday-song.mp3",
-  profile: "/photos/profile.jpg",
-  memories: ["/photos/memory-1.jpg", "/photos/memory-2.jpg"],
+  profile: "/photos/profile.png",
+  memories: ["/photos/memory-1.png", "/photos/memory-2.png"],
   memoryCaptions: ["You make me smile ❤️", "My favourite kind of forever ✨"],
-  puzzleImage: "/photos/puzzle.jpg",
-  scratchImage: "/images/scratch-reveal.jpg",
-  introHeading: "There's something special I want to tell you…",
+  puzzleImage: "/photos/puzzle.png",
+  scratchImage: "/images/scratch-reveal.png",
+  introHeading: "Today's something special I want to tell you…",
   introMessage: "That's why I made something special for you…",
   wishes: [
-    "You are my favourite person, always ❤️",
     "May your smile stay this beautiful forever ✨",
+    "May you always know how special you truly are ❤️",
     "You deserve all the happiness in the world 💕",
     "May every dream of yours come true 🌙",
   ],
   scratchTitle: "Happy Birthday! 🎉",
   scratchMessage: "You make life a little more magical ❤️",
-  letter: `My dearest,
+  letter: `Dear Anushka 💐,
 
-On this very special day, I want you to know how deeply you are loved. Every single moment I spend with you feels like a beautiful dream. You make everything feel extraordinary.
+On this special day, While celebrating your birthday i want you to know, Every moment spent with you somehow becomes a memory worth keeping, and you have this way of making even normal days feel a little more special.
 
-Your smile is my favourite thing in the entire world, and your laugh can brighten even the darkest day.
+Your smile can instantly lift the mood, and your laugh is honestly one of those things that can make a bad day feel much better.
 
-Thank you for being you.
+Thank you for simply being the person you are — kind, real, supportive, and someone I’m genuinely grateful to have in my life.
 
-I hope this birthday brings you endless happiness, beautiful memories, and everything your heart wishes for.
+I hope this birthday brings you lots of happiness, unforgettable memories, success, peace, and everything you’ve been wishing for.
 
-I promise to always be there to celebrate your happiness, support your dreams, and remind you how special you truly are.
+No matter where life takes us, I’ll always be there to celebrate your good days, support you when things get difficult, cheer for your dreams, and remind you of how amazing and capable you are.
 
-Forever yours ❤️`,
+Stay exactly the way you are. Happy Birthday ❤️`,
 };

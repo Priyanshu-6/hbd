@@ -30,7 +30,7 @@ export default function LetterScene({ onReplay }: { onReplay: () => void }) {
     <div className="letter-scene">
       <div className="letter-icon">
         <Mail size={29} strokeWidth={1} />
-        <Heart size={11} />
+        <Heart size={10} />
       </div>
       <Heading subtitle="A few words from my heart to yours.">
         A Letter Just For You
@@ -46,10 +46,10 @@ export default function LetterScene({ onReplay }: { onReplay: () => void }) {
               card.current.scrollHeight -
                 card.current.scrollTop -
                 card.current.clientHeight <
-              50;
+              150;
         }}
       >
-        <span className="letter-date">WITH ALL MY LOVE</span>
+        <span className="letter-date"></span>
         <p aria-hidden="true">
           {birthdayConfig.letter.slice(0, count)}
           {!done && <span className="type-cursor">|</span>}

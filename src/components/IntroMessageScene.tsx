@@ -14,7 +14,7 @@ export default function IntroMessageScene({ onNext }: SceneProps) {
       >
         <Photo src={birthdayConfig.profile} alt="A special birthday memory" />
       </motion.div>
-      <div className="eyebrow">HEY, MY FAVOURITE HUMAN</div>
+      <div className="eyebrow">HEY, MY FAVOURITE FRIEND</div>
       <Heading subtitle={birthdayConfig.introMessage}>
         {birthdayConfig.introHeading}
       </Heading>

@@ -8,7 +8,7 @@ export default function MemoriesScene({ onNext }: SceneProps) {
   const [index, setIndex] = useState(0);
   return (
     <div className="memories-scene">
-      <div className="eyebrow">THE LITTLE MOMENTS, THE BIG FEELINGS</div>
+      <div className="eyebrow">THE LITTLE MOMENTS;</div>
       <Heading subtitle="Some moments deserve to be kept forever.">
         Cute Memories <span className="pink">♡</span>
       </Heading>
