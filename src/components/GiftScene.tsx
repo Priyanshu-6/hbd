@@ -86,7 +86,7 @@ export default function GiftScene({ onNext }: SceneProps) {
         {!opening && <Sparkles size={14} />}
       </p>
       <p className="tiny-note">
-        made with brain. sealed with a little surprise.
+        made with my brain😜. sealed with a little surprise.
       </p>
     </div>
   );

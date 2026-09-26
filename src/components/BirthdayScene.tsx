@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { Wind } from "lucide-react";
+import { Wind, Mic, MicOff } from "lucide-react";
+import { useBlowMicrophone } from "../hooks/useBlowMicrophone";
 import { birthdayConfig } from "../config";
 import { Burst, Heading, NextButton } from "./Shared";
 import type { SceneProps } from "./Shared";
@@ -31,6 +32,14 @@ function Count({ value, label }: { value: number; label: string }) {
 }
 export default function BirthdayScene({ onNext }: SceneProps) {
   const [blown, setBlown] = useState(false);
+  const mic = useBlowMicrophone(() => setBlown(true));
+  const micActive = ["requesting", "calibrating", "listening"].includes(
+    mic.status,
+  );
+  const blow = () => {
+    mic.stop();
+    setBlown(true);
+  };
   const [age] = useState(() => {
     const birth = new Date(birthdayConfig.birthDate);
     const now = new Date();
@@ -109,15 +118,38 @@ export default function BirthdayScene({ onNext }: SceneProps) {
         {blown ? (
           <NextButton onClick={onNext}>Keep the magic going</NextButton>
         ) : (
-          <button className="pill" onClick={() => setBlown(true)}>
-            <Wind size={16} /> Blow out the candles
-          </button>
+          <div className="candle-controls">
+            <button
+              className="pill pink-border"
+              onClick={micActive ? mic.stop : mic.start}
+              aria-pressed={micActive}
+            >
+              {micActive ? <MicOff size={14} /> : <Mic size={14} />}
+              {micActive ? "Stop microphone" : "Use microphone"}
+            </button>
+            <button className="pill" onClick={blow}>
+              <Wind size={16} /> Blow out the candles
+            </button>
+          </div>
         )}
       </div>
-      <p className="tiny-note">
+      {!blown && micActive && (
+        <div className="mic-level" aria-hidden="true">
+          <span style={{ transform: `scaleX(${mic.level})` }} />
+        </div>
+      )}
+      <p className="tiny-note" role="status">
         {blown
           ? "May this year be your most beautiful chapter."
-          : "A little tap is all the magic you need."}
+          : mic.status === "requesting"
+            ? "Allow microphone access, or use the candle button."
+            : mic.status === "calibrating"
+              ? "One quiet moment… getting ready to listen."
+              : mic.status === "listening"
+                ? "Blow gently or make a little sound near your mic."
+                : mic.status === "unavailable"
+                  ? "Microphone unavailable. The candle button still works."
+                  : "Blow into your mic, or make a wish with a tap."}
       </p>
     </div>
   );

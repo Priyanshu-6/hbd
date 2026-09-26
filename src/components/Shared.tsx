@@ -81,6 +81,7 @@ export function Photo({
         <span>a moment to treasure</span>
       </div>
       <img
+        key={src}
         src={src}
         alt={alt}
         draggable={false}
