@@ -6,12 +6,12 @@ export const birthdayConfig = {
   birthdayCode: "2005",
   birthDate: "2005-09-27T00:00:00+05:30",
   song: "/audio/birthday-song.mp3",
-  profile: "/photos/profile.png",
+  profile: "/photos/profile.webp",
   memories: [
-    "/photos/memory-1.png",
-    "/photos/memory-2.png",
-    "/photos/memory-3.png",
-    "/photos/memory-4.png",
+    "/photos/memory-1.webp",
+    "/photos/memory-2.webp",
+    "/photos/memory-3.webp",
+    "/photos/memory-4.webp",
   ],
   memoryCaptions: [
     "You make me smile ❤️",
@@ -19,8 +19,8 @@ export const birthdayConfig = {
     "Little moments, beautiful memories 💕",
     "Here’s to many more adventures together ✨",
   ],
-  puzzleImage: "/photos/puzzle.png",
-  scratchImage: "/images/scratch-reveal.png",
+  puzzleImage: "/photos/puzzle.webp",
+  scratchImage: "/images/scratch-reveal.webp",
   introHeading: "Today's something special I want to tell you…",
   introMessage: "That's why I made something special for you…",
   wishes: [
