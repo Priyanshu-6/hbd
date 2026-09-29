@@ -106,9 +106,9 @@ export default function PuzzleScene({ onNext }: SceneProps) {
       </div>
       <p className="puzzle-hint" role="status">
         {solved
-          ? "Some things just fit perfectly. Like us. ♡"
+          ? "You did it! 🎉"
           : solving
-            ? "Putting a little love into place…"
+            ? "Solving it for you..."
             : "Tap a tile next to the empty space."}
       </p>
       <div className="puzzle-actions">
