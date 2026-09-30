@@ -4,7 +4,7 @@ export const SHOW_PREVIEW_UI = true;
 export const birthdayConfig = {
   recipientName: "Anushka",
   birthdayCode: "2005",
-  birthDate: "2005-09-27T00:00:00+05:30",
+  birthDate: "2005-10-01T00:00:00+05:30",
   song: "/audio/birthday-song.mp3",
   profile: "/photos/profile.webp",
   memories: [
