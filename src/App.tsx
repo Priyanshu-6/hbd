@@ -15,6 +15,7 @@ import PuzzleScene from "./components/PuzzleScene";
 import ScratchCardScene from "./components/ScratchCardScene";
 import LetterScene from "./components/LetterScene";
 import SceneTransition from "./components/SceneTransition";
+import { Analytics } from "@vercel/analytics/react";
 const scenes = [
   GiftScene,
   PasscodeScene,
@@ -54,7 +55,8 @@ export default function App() {
   };
   useExperienceTool(currentScene, names[currentScene]);
   const Scene = scenes[currentScene];
-  return (
+  return ( 
+     <>
     <MotionConfig reducedMotion="user">
       <div className="experience">
         <StarBackground />
@@ -109,5 +111,7 @@ export default function App() {
         <MusicPlayer />
       </div>
     </MotionConfig>
+    <Analytics />
+    </>
   );
 }
